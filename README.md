@@ -1,69 +1,28 @@
-# React + TypeScript + Vite
+# 📌 Tech Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🏗️ Core Technologies
+### React – Component-based UI library for building dynamic user interfaces.
+### TypeScript – Strongly typed JavaScript for better maintainability and scalability.
+### Vite – Fast build tool and development server for an optimized developer experience.
 
-Currently, two official plugins are available:
+## 📡 Routing
+### React Router – Declarative routing library for handling navigation in the app.
+ref: https://reactrouter.com/home
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔄 Data Fetching
+### React Query
+ref: https://tanstack.com/query/latest/docs/framework/react/installation
 
-## Expanding the ESLint configuration
+## 🍪 Cookies
+### Universal Cookie – Library for managing cookies in both the browser and Node.js environments.
+ref: https://www.npmjs.com/package/universal-cookie
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🎨 UI & Styling
+### Tailwind CSS – Utility-first CSS framework for rapid and responsive UI development.
+ref: https://v3.tailwindcss.com/docs/installation
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### shadcn – Pre-built, accessible UI components based on Radix UI.
+ref: https://ui.shadcn.com/
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### React Icons – Collection of popular icon sets for easy integration.
+ref: https://react-icons.github.io/react-icons/
