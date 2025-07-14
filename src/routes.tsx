@@ -7,7 +7,7 @@ const ClientPages = {
   Home: lazy(() => import("@/pages/home")),
   About: lazy(() => import("@/pages/About")),
   Contact: lazy(() => import("@/pages/ContactUs")),
-  LearningArea: lazy(() => import("@/pages/learning-area")),
+  LearningArea: lazy(() => import("@/pages/learning-area/index")),
 };
 
 // ** Auth Pages
