@@ -1,4 +1,4 @@
-import { Heart, GraduationCap, Sparkles, Laptop } from "lucide-react";
+import { GraduationCap, Sparkles, Laptop } from "lucide-react";
 
 export const HealthServices = () => {
   return (
