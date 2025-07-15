@@ -17,12 +17,13 @@ const LoginForm = () => {
     mutationFn: login,
     onSuccess: (data) => {
       console.log(data);
-      const { token } = data.data;
+      const { tokens } = data;
 
-      CookieService.set("token", token, {
+      CookieService.set("token", tokens, {
         path: "/",
         secure: true,
       });
+      toast.success("Login successful");
       navigate(`/`);
     },
     onError: (error) => {

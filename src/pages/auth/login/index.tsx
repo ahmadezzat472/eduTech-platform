@@ -18,12 +18,9 @@ const Login = () => {
 
   useEffect(() => {
     const token = CookieService.get("token");
-    const role = CookieService.get("role");
 
     if (token) {
-      if (role == 1) {
-        navigate(`/ministry`);
-      }
+      navigate(`/`);
     }
   }, [navigate]);
 

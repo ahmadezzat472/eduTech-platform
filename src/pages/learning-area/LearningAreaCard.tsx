@@ -3,15 +3,17 @@ import { HiArrowSmRight } from "react-icons/hi";
 import { Link } from "react-router";
 
 interface Props {
-  id: string;
   image: string;
   name: string;
   description?: string;
 }
 
-const LearningAreaCard = ({ id, name, description, image }: Props) => {
+const LearningAreaCard = ({ name, description, image }: Props) => {
   return (
-    <Link to={`/learning-area/${id}`} className="group overflow-hidden">
+    <Link
+      to={`/learning-area/${name.toLowerCase().replace(/\s+/g, "-")}`}
+      className="group overflow-hidden"
+    >
       <DirectionAwareHoverCard
         imageUrl={image}
         isDark={true}

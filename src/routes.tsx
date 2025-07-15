@@ -2,6 +2,7 @@ import { lazy } from "react";
 import { createBrowserRouter } from "react-router";
 import RootLayout from "./components/layout/Root";
 import Loadable from "./components/utils/Loadable";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
 
 const ClientPages = {
   Home: lazy(() => import("@/pages/home")),
@@ -12,7 +13,7 @@ const ClientPages = {
 // ** Auth Pages
 const AuthPages = {
   Login: lazy(() => import("@/pages/auth/login")),
-  Register: lazy(() => import("@/pages/auth/Register")),
+  Register: lazy(() => import("@/pages/auth/register")),
   RoutingError: lazy(() => import("@/pages/auth/RoutingError")),
   Unauthorized: lazy(() => import("@/pages/auth/Unauthorized")),
   NotFound: lazy(() => import("@/pages/auth/NotFound")),
@@ -36,14 +37,18 @@ const router = createBrowserRouter([
             element: <Loadable Component={ClientPages.LearningArea} />,
           },
           {
-            path: ":courseId",
+            path: ":courseName",
             element: <Loadable Component={ClientPages.LearningAreaDetail} />,
           },
         ],
       },
       {
-        path: "quiz",
-        element: <Loadable Component={ClientPages.Quiz} />,
+        path: "learning-area/:courseName/:chapterName/quiz/:quizType",
+        element: (
+          <ProtectedRoute>
+            <Loadable Component={ClientPages.Quiz} />
+          </ProtectedRoute>
+        ),
       },
     ],
   },
@@ -54,7 +59,7 @@ const router = createBrowserRouter([
     errorElement: <Loadable Component={AuthPages.RoutingError} />,
     element: <Loadable Component={AuthPages.Login} />,
   },
-  
+
   {
     path: "/register",
     errorElement: <Loadable Component={AuthPages.RoutingError} />,

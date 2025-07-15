@@ -8,9 +8,9 @@ import {
 import { useNavigate } from "react-router";
 import { useEffect } from "react";
 import AnimatedCircle from "../login/AnimatedCircle";
+import RegisterForm from "@/pages/auth/register/Form";
+import NavigationButtons from "@/pages/auth/register/NavigationButtons";
 import RegisterImage from "./RegisterImage";
-import NavigationButtons from "./NavigationButtons";
-import RegisterForm from "./Form";
 
 const Register = () => {
   const navigate = useNavigate();
