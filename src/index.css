@@ -167,6 +167,8 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@tailwind utilities;
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -178,6 +180,27 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .animated-gradient {
+    background: linear-gradient(-45deg, #772590, #502875, #1c5772, #22224f, #0f172a);
+    background-size: 400% 400%;
+    animation: gradientAnimation 6s ease infinite;
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
 
 @layer utilities {
   @keyframes scaleY {
