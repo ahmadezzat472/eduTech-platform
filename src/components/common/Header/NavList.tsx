@@ -11,6 +11,7 @@ const NavList = ({ classNameList, classNameItem }: Props) => {
     { name: "about", href: `/about` },
     { name: "contact", href: `/contact` },
     { name: "learning area", href: `/learning-area` },
+    { name: "quiz", href: `/quiz` },
   ];
   return (
     <ul className={classNameList}>
