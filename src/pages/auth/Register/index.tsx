@@ -8,7 +8,7 @@ import {
 import { useNavigate } from "react-router";
 import { useEffect } from "react";
 import AnimatedCircle from "../login/AnimatedCircle";
-import AnimatedImage from "../login/AnimatedImage";
+import RegisterImage from "./RegisterImage";
 import NavigationButtons from "./NavigationButtons";
 import RegisterForm from "./Form";
 
@@ -29,7 +29,7 @@ const Register = () => {
             <Card className="bg-gray-800/50 border-gray-600 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-3xl font-bold text-white">
-                  <AnimatedImage />
+                  <RegisterImage />
                   Register
                 </CardTitle>
                 <CardDescription className="text-gray-400">
