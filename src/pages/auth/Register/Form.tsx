@@ -33,7 +33,9 @@ const RegisterForm = () => {
   return (
     <form onSubmit={formik.handleSubmit} className="space-y-4">
       <div>
-        <Label htmlFor="userName" className="text-white mb-2">User Name</Label>
+        <Label htmlFor="userName" className="text-white mb-2">
+          User Name
+        </Label>
         <div className="relative">
           <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           <Input
@@ -44,7 +46,9 @@ const RegisterForm = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             className={`pl-10 bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 py-5 ${
-              formik.touched.userName && formik.errors.userName ? "border-red-500" : ""
+              formik.touched.userName && formik.errors.userName
+                ? "border-red-500"
+                : ""
             }`}
             placeholder="Enter your username"
           />
@@ -55,7 +59,9 @@ const RegisterForm = () => {
       </div>
 
       <div>
-        <Label htmlFor="email" className="text-white mb-2">Email</Label>
+        <Label htmlFor="email" className="text-white mb-2">
+          Email
+        </Label>
         <div className="relative">
           <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           <Input
@@ -66,7 +72,9 @@ const RegisterForm = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             className={`pl-10 bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 py-5 ${
-              formik.touched.email && formik.errors.email ? "border-red-500" : ""
+              formik.touched.email && formik.errors.email
+                ? "border-red-500"
+                : ""
             }`}
             placeholder="Enter your email"
           />
@@ -77,7 +85,9 @@ const RegisterForm = () => {
       </div>
 
       <div>
-        <Label htmlFor="password" className="text-white mb-2">Password</Label>
+        <Label htmlFor="password" className="text-white mb-2">
+          Password
+        </Label>
         <div className="relative">
           <FaLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           <Input
@@ -88,7 +98,9 @@ const RegisterForm = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             className={`pl-10 bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 py-5 ${
-              formik.touched.password && formik.errors.password ? "border-red-500" : ""
+              formik.touched.password && formik.errors.password
+                ? "border-red-500"
+                : ""
             }`}
             placeholder="Enter your password"
           />
@@ -99,7 +111,9 @@ const RegisterForm = () => {
       </div>
 
       {error && (
-        <p className="text-red-400 text-sm">{error.message || "Register failed."}</p>
+        <p className="text-red-400 text-sm">
+          {error.message || "Register failed."}
+        </p>
       )}
 
       <Button

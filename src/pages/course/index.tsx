@@ -9,8 +9,10 @@ import BackgroundBoxes from "@/components/common/BackgroundBoxes";
 import Main from "@/components/common/Main";
 
 export default function Course() {
-  const { courseId } = useParams();
-  const course = courses.find((c) => c.id === courseId);
+  const { courseName } = useParams();
+  const course = courses.find(
+    (c) => c.name.toLowerCase().replace(/\s+/g, "-") === courseName
+  );
 
   const data = course
     ? course.chapters.map((chapter) => ({
@@ -62,7 +64,11 @@ export default function Course() {
                       <Badge variant="secondary">{level.type}</Badge>
                     </div>
                     <Link
-                      to={`/learning-area/${course?.id}/quiz/${level.type}`}
+                      to={`/learning-area/${course.name
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")}/${chapter.name
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")}/quiz/${level.type}`}
                       className="w-full inline-block"
                     >
                       <Button size={"sm"} className="mt-4 h-6 w-full">

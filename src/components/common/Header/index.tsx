@@ -2,12 +2,15 @@ import NavLinks from "./NavList.tsx";
 import { Button } from "@/components/ui/button";
 import MenuSheet from "./MenuSheet.tsx";
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import Logo from "../Logo.tsx";
+import { FaSignOutAlt, FaUser } from "react-icons/fa";
+import CookieService from "@/services/cookies";
 
 const Header = () => {
   const [isBottomNavVisible, setIsBottomNavVisible] = useState(false);
-
+  const token = CookieService.get("token");
+  const navigate = useNavigate();
   useEffect(() => {
     let timer: NodeJS.Timeout;
     if (isBottomNavVisible) {
@@ -36,12 +39,29 @@ const Header = () => {
                   classNameItem="text-primary"
                 />
               </div>
-              <Button
-                asChild
-                className="bg-gradient-to-r from-primary-500 to-sky-500 text-white font-semibold hover:opacity-85 transition"
-              >
-                <Link to="/login">Login</Link>
-              </Button>
+              {token ? (
+                <Button
+                  onClick={() => {
+                    CookieService.remove("token");
+                    navigate("/");
+                  }}
+                  asChild
+                  className="bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold hover:opacity-85 transition"
+                >
+                  <FaSignOutAlt />
+                  Logout
+                </Button>
+              ) : (
+                <Link to="/login">
+                  <Button
+                    asChild
+                    className="bg-gradient-to-r from-primary-500 to-sky-500 text-white font-semibold hover:opacity-85 transition"
+                  >
+                    <FaUser />
+                    Login
+                  </Button>
+                </Link>
+              )}
 
               {/* <Button
                 variant="ghost"

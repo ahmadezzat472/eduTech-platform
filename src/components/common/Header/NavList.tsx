@@ -52,7 +52,6 @@ const NavList: FC<Props> = ({ classNameList, classNameItem }) => {
     { name: "about", href: "/#about", type: "hash" },
     { name: "contact", href: "/#contact", type: "hash" },
     { name: "learning area", href: "/learning-area", type: "route" },
-    { name: "quiz", href: "/quiz", type: "route" },
   ];
 
   return (

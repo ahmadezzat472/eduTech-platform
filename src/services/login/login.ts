@@ -6,11 +6,11 @@ type LoginParams = {
 };
 
 export const login = async ({ email, password }: LoginParams) => {
-  const response = await api<LoginResponse>(`auth/login`, {
+  const response = await api<LoginResponse>(`Account/Login`, {
     method: "POST",
     body: JSON.stringify({
-      email,
-      password,
+      Email: email,
+      password: password,
     }),
   });
   return response;
