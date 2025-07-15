@@ -1,5 +1,10 @@
-import { Facebook, Instagram, Linkedin, Mail, MessageSquare, Phone, Send, User, MessageCircle} from "lucide-react";
-import { FaFacebook, FaInstagram, FaWhatsapp, FaLinkedin } from "react-icons/fa";
+import { Mail, MessageSquare, Send, User } from "lucide-react";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaWhatsapp,
+  FaLinkedin,
+} from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 
 export function ContactSection() {
@@ -32,7 +37,10 @@ export function ContactSection() {
             />
           </div>
           <div className="relative">
-            <MessageSquare className="absolute left-3 top-3 text-gray-400" size={20} />
+            <MessageSquare
+              className="absolute left-3 top-3 text-gray-400"
+              size={20}
+            />
             <textarea
               placeholder="Your Message"
               className="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -48,16 +56,32 @@ export function ContactSection() {
 
       {/* Social Icons */}
       <div className="mt-10 ml-4 flex justify-center gap-6">
-        <a href="https://facebook.com" target="_blank" className="hover:text-blue-600">
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          className="hover:text-blue-600"
+        >
           <FaFacebook size={28} />
         </a>
-        <a href="https://instagram.com" target="_blank" className="hover:text-pink-500">
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          className="hover:text-pink-500"
+        >
           <FaInstagram size={28} />
         </a>
-        <a href="https://wa.me/1234567890" target="_blank" className="hover:text-green-500">
+        <a
+          href="https://wa.me/1234567890"
+          target="_blank"
+          className="hover:text-green-500"
+        >
           <FaWhatsapp size={28} />
         </a>
-        <a href="https://linkedin.com" target="_blank" className="hover:text-blue-700">
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          className="hover:text-blue-700"
+        >
           <FaLinkedin size={28} />
         </a>
       </div>

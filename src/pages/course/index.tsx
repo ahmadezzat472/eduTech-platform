@@ -1,6 +1,6 @@
 import { Timeline } from "@/components/ui/timeline";
 
-export function TimelineDemo() {
+export default function Course() {
   const data = [
     {
       title: "2024",

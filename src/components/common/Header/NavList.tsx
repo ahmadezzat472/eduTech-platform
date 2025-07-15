@@ -38,7 +38,7 @@
 
 
 import { HashLink } from 'react-router-hash-link';
-import { NavLink as RouterNavLink } from 'react-router-dom'; // Important to rename it
+import { NavLink as RouterNavLink } from 'react-router'; // Important to rename it
 import type { FC } from "react";
 
 interface Props {
