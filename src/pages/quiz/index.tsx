@@ -5,6 +5,7 @@ import QuestionCard from "./question-card";
 import GameOver from "./game-over";
 import type { GameState } from "@/types/quiz";
 import Timer from "./timer";
+import { AnimatedCircularProgressBar } from "@/components/magicui/animated-circular-progress-bar";
 
 const DEFAULT_TIME = 30;
 
@@ -76,6 +77,16 @@ const Quiz = () => {
               totalQuestions={QUESTIONS.length}
               currentQuestion={currentQuestion}
             />
+            
+            <AnimatedCircularProgressBar
+              max={QUESTIONS.length}
+              min={0}
+              value={score}
+              gaugePrimaryColor="#22c55e" // Tailwind green-500
+              gaugeSecondaryColor="#e5e7eb" // Tailwind gray-200
+              className="mx-auto mt-6 size-20"
+            />
+            {/* You may remove the text score below if you only want the progress bar */}
             <div className="mt-6 text-center text-gray-600">
               Score: {score}/{QUESTIONS.length}
             </div>
@@ -86,6 +97,12 @@ const Quiz = () => {
             score={score}
             totalQuestions={QUESTIONS.length}
             onRestart={() => handleStart(countdown)}
+            message={
+              score / QUESTIONS.length < 0.5
+                ? "You need to study more."
+                : "Great job! You studied well."
+            }
+            onGoToStart={() => setGameState("start")}
           />
         )}
       </div>
