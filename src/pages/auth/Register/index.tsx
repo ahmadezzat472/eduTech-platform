@@ -9,7 +9,7 @@ import { useNavigate } from "react-router";
 import { useEffect } from "react";
 import AnimatedCircle from "../login/AnimatedCircle";
 import AnimatedImage from "../login/AnimatedImage";
-import NavigationButtons from "../login/NavigationButtons";
+import NavigationButtons from "./NavigationButtons";
 import RegisterForm from "./Form";
 
 const Register = () => {
