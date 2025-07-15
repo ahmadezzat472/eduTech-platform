@@ -5,16 +5,12 @@ import {
   useQuery,
 } from "@tanstack/react-query";
 
-type ApiError = {
-  errors: string[];
-};
-
 export function useApiQuery<TData>(
   queryKey: QueryKey,
   queryFn: QueryFunction<TData, QueryKey>,
-  queryOptions?: Omit<UseQueryOptions<TData, ApiError>, "queryKey" | "queryFn">
+  queryOptions?: Omit<UseQueryOptions<TData, Error>, "queryKey" | "queryFn">
 ) {
-  return useQuery<TData, ApiError>({
+  return useQuery<TData, Error>({
     queryKey,
     queryFn,
     ...queryOptions,

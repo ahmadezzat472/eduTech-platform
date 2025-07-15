@@ -27,7 +27,7 @@ const LoginForm = () => {
       navigate(`/`);
     },
     onError: (error) => {
-      toast.error(error.errors[0] || "An error occurred during login");
+      toast.error(error.message || "An error occurred during login");
     },
   });
 
@@ -91,7 +91,7 @@ const LoginForm = () => {
 
       {error && (
         <p className="text-red-400 text-sm">
-            {error.errors[0] || "Login failed. Please try again."}
+          {error.message || "Login failed. Please try again."}
         </p>
       )}
 

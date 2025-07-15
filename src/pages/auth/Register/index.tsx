@@ -8,10 +8,10 @@ import {
 import { useNavigate } from "react-router";
 import { useEffect } from "react";
 import AnimatedCircle from "../login/AnimatedCircle";
-import RegisterForm from "@/pages/auth/register/Form";
-import NavigationButtons from "@/pages/auth/register/NavigationButtons";
 import RegisterImage from "./RegisterImage";
 import CookieService from "@/services/cookies";
+import FormRegister from "./FormRegister";
+import RegisterNavigationButtons from "./RegisterNavigationButtons";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -41,8 +41,8 @@ const Register = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <RegisterForm />
-                <NavigationButtons />
+                <FormRegister />
+                <RegisterNavigationButtons />
               </CardContent>
             </Card>
           </div>

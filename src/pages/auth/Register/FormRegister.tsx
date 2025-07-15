@@ -8,9 +8,9 @@ import { FaLock } from "react-icons/fa6";
 import { toast } from "sonner";
 import { useApiMutation } from "@/hooks/useApiMutation";
 import { register } from "@/services/register/register"; // ✅ Create this function
-import { validationSchema } from "./validationSchema";
+import { registerValidationSchema } from "./validationSchema";
 
-const RegisterForm = () => {
+const FormRegister = () => {
   const navigate = useNavigate();
 
   const { mutate, isPending, error } = useApiMutation({
@@ -20,13 +20,13 @@ const RegisterForm = () => {
       navigate("/login");
     },
     onError: (error) => {
-      toast.error(error.errors[0] || "Registration failed");
+      toast.error(error.message || "Registration failed");
     },
   });
 
   const formik = useFormik({
     initialValues: { username: "", email: "", password: "" },
-    validationSchema,
+    validationSchema: registerValidationSchema,
     onSubmit: (values) => mutate(values),
   });
 
@@ -112,7 +112,7 @@ const RegisterForm = () => {
 
       {error && (
         <p className="text-red-400 text-sm">
-          {error.errors[0] || "Register failed."}
+          {error.message || "Register failed."}
         </p>
       )}
 
@@ -130,4 +130,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default FormRegister;
