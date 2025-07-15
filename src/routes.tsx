@@ -13,7 +13,7 @@ const ClientPages = {
 // ** Auth Pages
 const AuthPages = {
   Login: lazy(() => import("@/pages/auth/login")),
-  Register: lazy(() => import("@/pages/auth/register/index")),
+  Register: lazy(() => import("@/pages/auth/register/index.tsx")),
   RoutingError: lazy(() => import("@/pages/auth/RoutingError")),
   Unauthorized: lazy(() => import("@/pages/auth/Unauthorized")),
   NotFound: lazy(() => import("@/pages/auth/NotFound")),
