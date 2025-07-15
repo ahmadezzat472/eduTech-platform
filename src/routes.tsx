@@ -5,8 +5,6 @@ import Loadable from "./components/utils/Loadable";
 
 const ClientPages = {
   Home: lazy(() => import("@/pages/home")),
-  About: lazy(() => import("@/pages/About")),
-  Contact: lazy(() => import("@/pages/ContactUs")),
   LearningArea: lazy(() => import("@/pages/learning-area")),
   LearningAreaDetail: lazy(() => import("@/pages/course")),
   Quiz: lazy(() => import("@/pages/quiz")),
@@ -29,14 +27,6 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Loadable Component={ClientPages.Home} />,
-      },
-      {
-        path: "about",
-        element: <Loadable Component={ClientPages.About} />,
-      },
-      {
-        path: "contact",
-        element: <Loadable Component={ClientPages.Contact} />,
       },
       {
         path: "learning-area",
