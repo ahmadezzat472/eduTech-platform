@@ -23,6 +23,7 @@ const Register = () => {
       navigate(`/`);
     }
   }, [navigate]);
+  
   return (
     <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-pink-900 to-gray-900">
       <AnimatedCircle />
