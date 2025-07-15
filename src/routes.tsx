@@ -9,10 +9,10 @@ const ClientPages = {
   LearningAreaDetail: lazy(() => import("@/pages/course")),
   Quiz: lazy(() => import("@/pages/quiz")),
 };
-
 // ** Auth Pages
 const AuthPages = {
   Login: lazy(() => import("@/pages/auth/login")),
+  Register: lazy(() => import("@/pages/auth/Register")),
   RoutingError: lazy(() => import("@/pages/auth/RoutingError")),
   Unauthorized: lazy(() => import("@/pages/auth/Unauthorized")),
   NotFound: lazy(() => import("@/pages/auth/NotFound")),
@@ -54,7 +54,12 @@ const router = createBrowserRouter([
     errorElement: <Loadable Component={AuthPages.RoutingError} />,
     element: <Loadable Component={AuthPages.Login} />,
   },
-
+  
+  {
+    path: "/register",
+    errorElement: <Loadable Component={AuthPages.RoutingError} />,
+    element: <Loadable Component={AuthPages.Register} />,
+  },
   // ** Unauthorized
   {
     path: "/unauthorized",

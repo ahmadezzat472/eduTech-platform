@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Sparkles, Lightbulb, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 
@@ -49,10 +50,13 @@ export function AboutSection() {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button className="px-6 py-2 text-lg">Join the Mission</Button>
-          <Button variant="outline" className="px-6 py-2 text-lg text-white">
-            Learn More
-          </Button>
+            <Button asChild className="px-6 py-2 text-lg">
+              <Link to="/register">Join the Mission</Link>
+            </Button>
+
+            <Button asChild variant="outline" className="px-6 py-2 text-lg text-white">
+              <Link to="/learning-area">Learn More</Link>
+            </Button>
         </div>
       </div>
     </section>
