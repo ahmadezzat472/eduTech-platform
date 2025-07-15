@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { QUESTIONS } from "./questions";
 import StartScreen from "./start-screen";
 import QuestionCard from "./question-card";
-import GameOver from "./game-over";
+import FinalScreen from "./FinalScreen";
 import type { GameState } from "@/types/quiz";
 import Timer from "./timer";
 import { AnimatedCircularProgressBar } from "@/components/magicui/animated-circular-progress-bar";
@@ -16,26 +16,28 @@ const Quiz = () => {
   const [score, setScore] = useState<number>(0);
   const [timeLeft, setTimeLeft] = useState<number>(DEFAULT_TIME);
   const [countdown, setCountdown] = useState<number>(DEFAULT_TIME);
+  const [useTimer, setUseTimer] = useState(true);
 
   useEffect(() => {
     let timer: number;
-    if (gameState === "playing" && timeLeft > 0) {
+    if (gameState === "playing" && useTimer && timeLeft > 0) {
       timer = window.setInterval(() => {
         setTimeLeft((prev) => prev - 1);
       }, 1000);
-    } else if (timeLeft === 0 && gameState === "playing") {
+    } else if (useTimer && timeLeft === 0 && gameState === "playing") {
       setGameState("end");
     }
     return () => window.clearInterval(timer);
-  }, [timeLeft, gameState]);
+  }, [timeLeft, gameState, useTimer]);
 
-  const handleStart = (selectedTime?: number) => {
+  const handleStart = (selectedTime?: number, timerEnabled?: boolean) => {
     setGameState("playing");
     setTimeLeft(selectedTime || countdown);
     setCountdown(selectedTime || countdown);
     setScore(0);
     setCurrentQuestion(0);
     setSelectedAnswer(null);
+    setUseTimer(timerEnabled !== undefined ? timerEnabled : true);
   };
 
   const handleAnswer = (index: number): void => {
@@ -69,7 +71,15 @@ const Quiz = () => {
         )}
         {gameState === "playing" && (
           <div className="p-8">
-            <Timer timeLeft={timeLeft} />
+            <div className="flex items-center justify-center">
+              <button
+                onClick={() => setGameState("start")}
+                className="mb-4 px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition-colors"
+              >
+                Return to Start Screen
+              </button>
+            </div>
+            {useTimer && <Timer timeLeft={timeLeft} />}
             <QuestionCard
               question={QUESTIONS[currentQuestion]}
               onAnswerSelect={handleAnswer}
@@ -77,7 +87,7 @@ const Quiz = () => {
               totalQuestions={QUESTIONS.length}
               currentQuestion={currentQuestion}
             />
-            
+
             <AnimatedCircularProgressBar
               max={QUESTIONS.length}
               min={0}
@@ -93,7 +103,7 @@ const Quiz = () => {
           </div>
         )}
         {gameState === "end" && (
-          <GameOver
+          <FinalScreen
             score={score}
             totalQuestions={QUESTIONS.length}
             onRestart={() => handleStart(countdown)}
