@@ -7,7 +7,8 @@ const ClientPages = {
   Home: lazy(() => import("@/pages/home")),
   About: lazy(() => import("@/pages/About")),
   Contact: lazy(() => import("@/pages/ContactUs")),
-  LearningArea: lazy(() => import("@/pages/learning-area/index")),
+  LearningArea: lazy(() => import("@/pages/learning-area")),
+  Quiz: lazy(() => import("@/pages/quiz")),
 };
 
 // ** Auth Pages
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "learning-area",
         element: <Loadable Component={ClientPages.LearningArea} />,
+      },
+      {
+        path: "quiz",
+        element: <Loadable Component={ClientPages.Quiz} />,
       },
     ],
   },
