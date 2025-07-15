@@ -16,7 +16,7 @@ const RegisterNavigationButtons = () => {
         >
           Return Home
         </Button>
-       <Button
+        <Button
           variant="outline"
           onClick={goToLogin}
           className="bg-teal-600 text-white border-teal-600 hover:bg-teal-700"
