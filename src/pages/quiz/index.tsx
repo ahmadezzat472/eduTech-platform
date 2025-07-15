@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { QUESTIONS } from "./questions";
+import { QUESTIONS } from "../../data/questions";
 import StartScreen from "./start-screen";
 import QuestionCard from "./question-card";
 import FinalScreen from "./FinalScreen";
