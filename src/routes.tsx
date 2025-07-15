@@ -36,7 +36,7 @@ const router = createBrowserRouter([
             element: <Loadable Component={ClientPages.LearningArea} />,
           },
           {
-            path: ":id",
+            path: ":courseId",
             element: <Loadable Component={ClientPages.LearningAreaDetail} />,
           },
         ],

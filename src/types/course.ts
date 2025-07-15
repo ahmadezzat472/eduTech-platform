@@ -10,12 +10,14 @@ export type Chapter = {
   id: string;
   name: string;
   description: string;
+  whatYouWillLearn: string[];
   videoUrl: string;
-  levels: Level[];
+  quizLevels: quizLevels[];
 };
 
-export type Level = {
+export type quizLevels = {
   id: string;
   name: string;
+  type: "beginner" | "intermediate" | "advanced";
   description: string;
 };
