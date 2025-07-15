@@ -27,7 +27,7 @@ const CustomBreadcrumb = () => {
 
   return (
     <Breadcrumb>
-      <BreadcrumbList className="font-bold text-gray-400">
+      <BreadcrumbList className="font-bold text-gray-400 relative z-20">
         {pathSegments.map((segment, idx) => {
           accumulatedPath += `/${segment}`;
           const isLast = idx === pathSegments.length - 1;

@@ -6,6 +6,7 @@ import { userScores } from "@/data/userScore";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import BackgroundBoxes from "@/components/common/BackgroundBoxes";
+import Main from "@/components/common/Main";
 
 export default function Course() {
   const { courseId } = useParams();
@@ -78,16 +79,18 @@ export default function Course() {
     : [];
 
   return (
-    <div className="relative w-full overflow-clip">
+    <main className="relative w-full overflow-clip">
       <BackgroundBoxes
         title="Learn to code with ease"
         description="Learn to code with ease and start your journey to becoming a developer"
       />
-      <Timeline
-        data={data}
-        title={course?.name ?? ""}
-        description={course?.description ?? ""}
-      />
-    </div>
+      <Main>
+        <Timeline
+          data={data}
+          title={course?.name ?? ""}
+          description={course?.description ?? ""}
+        />
+      </Main>
+    </main>
   );
 }

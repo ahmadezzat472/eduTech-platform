@@ -5,7 +5,7 @@ export const courses: Course[] = [
     id: "1",
     name: "Frontend Development",
     description:
-      "Learn the basics of web development including HTML, CSS, and JavaScript.",
+      "Learn the basics of web development including HTML, CSS, and JavaScript to build your own website and start your journey to becoming a developer.",
     image:
       "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80", // HD web dev image
     chapters: [
@@ -107,7 +107,8 @@ export const courses: Course[] = [
   {
     id: "2",
     name: "Operating System",
-    description: "Understand the core concepts of operating systems.",
+    description:
+      "Understand the core concepts of operating systems to build your own operating system and start your journey to becoming a developer.",
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80", // HD OS image
     chapters: [
@@ -207,7 +208,7 @@ export const courses: Course[] = [
     id: "3",
     name: "Data Structures",
     description:
-      "Explore fundamental data structures used in computer science.",
+      "Explore fundamental data structures used in computer science to build your own data structures and start your journey to becoming a developer.",
     image:
       "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80", // HD data structures image
     chapters: [
@@ -306,7 +307,8 @@ export const courses: Course[] = [
   {
     id: "4",
     name: "Database Systems",
-    description: "Learn about databases, SQL, and data modeling.",
+    description:
+      "Learn about databases, SQL, and data modeling to build your own database and start your journey to becoming a developer.",
     image:
       "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80", // HD database image
     chapters: [
@@ -405,7 +407,8 @@ export const courses: Course[] = [
   {
     id: "5",
     name: "Networks",
-    description: "Understand computer networking concepts and protocols.",
+    description:
+      "Understand computer networking concepts and protocols to build your own network and start your journey to becoming a developer.",
     image:
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80", // HD network image
     chapters: [
