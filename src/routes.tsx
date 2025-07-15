@@ -8,6 +8,7 @@ const ClientPages = {
   About: lazy(() => import("@/pages/About")),
   Contact: lazy(() => import("@/pages/ContactUs")),
   LearningArea: lazy(() => import("@/pages/learning-area")),
+  LearningAreaDetail: lazy(() => import("@/pages/course")),
   Quiz: lazy(() => import("@/pages/quiz")),
 };
 
@@ -39,7 +40,16 @@ const router = createBrowserRouter([
       },
       {
         path: "learning-area",
-        element: <Loadable Component={ClientPages.LearningArea} />,
+        children: [
+          {
+            index: true,
+            element: <Loadable Component={ClientPages.LearningArea} />,
+          },
+          {
+            path: ":id",
+            element: <Loadable Component={ClientPages.LearningAreaDetail} />,
+          },
+        ],
       },
       {
         path: "quiz",
