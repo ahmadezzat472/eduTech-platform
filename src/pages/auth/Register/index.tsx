@@ -11,14 +11,18 @@ import AnimatedCircle from "../login/AnimatedCircle";
 import RegisterForm from "@/pages/auth/register/Form";
 import NavigationButtons from "@/pages/auth/register/NavigationButtons";
 import RegisterImage from "./RegisterImage";
+import CookieService from "@/services/cookies";
 
 const Register = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Optional: redirect if already logged in
-  }, [navigate]);
+    const token = CookieService.get("token");
 
+    if (token) {
+      navigate(`/`);
+    }
+  }, [navigate]);
   return (
     <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-pink-900 to-gray-900">
       <AnimatedCircle />

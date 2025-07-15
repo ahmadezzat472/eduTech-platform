@@ -1,22 +1,20 @@
 import { api } from "@/services/api";
 
 type RegisterParams = {
-  userName: string;
-  email: string;
+  username: string;
   password: string;
+  email: string;
 };
 
-interface RegisterResponse {
-  status: number;
-  message?: string;
-  data?: any;
-}
-
-export const register = async ({ userName, email, password }: RegisterParams) => {
-  const response = await api<RegisterResponse>(`Account/Register`, {
+export const register = async ({
+  username,
+  email,
+  password,
+}: RegisterParams) => {
+  const response = await api<unknown>(`Account/Register`, {
     method: "POST",
     body: JSON.stringify({
-      username: userName,
+      username: username,
       email,
       password,
     }),

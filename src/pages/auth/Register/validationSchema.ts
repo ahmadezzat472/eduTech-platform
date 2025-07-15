@@ -1,7 +1,7 @@
 import * as Yup from "yup";
 
 export const validationSchema = Yup.object({
-  userName: Yup.string()
+  username: Yup.string()
     .min(2, "Username must be at least 2 characters")
     .max(30, "Username must be 30 characters or less")
     .required("Username is required"),

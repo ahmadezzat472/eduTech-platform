@@ -1,7 +1,11 @@
+type ApiError = {
+  errors: string[];
+};
+
 import { type UseMutationOptions, useMutation } from "@tanstack/react-query";
 
 type ApiMutationOptions<TData, TVariables> = Omit<
-  UseMutationOptions<TData, Error, TVariables>,
+  UseMutationOptions<TData, ApiError, TVariables>,
   "mutationFn"
 > & {
   mutationFn: (variables: TVariables) => Promise<TData>;

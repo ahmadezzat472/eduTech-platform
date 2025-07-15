@@ -17,15 +17,15 @@ const RegisterForm = () => {
     mutationFn: register,
     onSuccess: () => {
       toast.success("Registered successfully!");
-      navigate("/");
+      navigate("/login");
     },
     onError: (error) => {
-      toast.error(error.message || "Registration failed");
+      toast.error(error.errors[0] || "Registration failed");
     },
   });
 
   const formik = useFormik({
-    initialValues: { userName: "", email: "", password: "" },
+    initialValues: { username: "", email: "", password: "" },
     validationSchema,
     onSubmit: (values) => mutate(values),
   });
@@ -33,28 +33,28 @@ const RegisterForm = () => {
   return (
     <form onSubmit={formik.handleSubmit} className="space-y-4">
       <div>
-        <Label htmlFor="userName" className="text-white mb-2">
+        <Label htmlFor="username" className="text-white mb-2">
           User Name
         </Label>
         <div className="relative">
           <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           <Input
-            id="userName"
-            name="userName"
+            id="username"
+            name="username"
             type="text"
-            value={formik.values.userName}
+            value={formik.values.username}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             className={`pl-10 bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 py-5 ${
-              formik.touched.userName && formik.errors.userName
+              formik.touched.username && formik.errors.username
                 ? "border-red-500"
                 : ""
             }`}
             placeholder="Enter your username"
           />
         </div>
-        {formik.touched.userName && formik.errors.userName && (
-          <p className="text-red-500 text-sm mt-1">{formik.errors.userName}</p>
+        {formik.touched.username && formik.errors.username && (
+          <p className="text-red-500 text-sm mt-1">{formik.errors.username}</p>
         )}
       </div>
 
@@ -112,7 +112,7 @@ const RegisterForm = () => {
 
       {error && (
         <p className="text-red-400 text-sm">
-          {error.message || "Register failed."}
+          {error.errors[0] || "Register failed."}
         </p>
       )}
 

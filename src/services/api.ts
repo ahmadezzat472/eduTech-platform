@@ -1,6 +1,9 @@
 import { BACKEND_BASE_URL } from "@/constants/backendAPIsConfig";
 import CookieService from "@/services/cookies";
 
+type ApiError = {
+  errors: string[];
+};
 export async function api<T>(
   endpoint: string,
   options: RequestInit = {}
@@ -27,7 +30,7 @@ export async function api<T>(
 
   // Check for any HTTP errors
   if (!response.ok) {
-    const errorBody = await response.json();
+    const errorBody: ApiError = await response.json();
     console.log("errorBody", errorBody);
     throw errorBody;
   }
