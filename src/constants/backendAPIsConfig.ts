@@ -1,2 +1,4 @@
-// export const BACKEND_BASE_URL = "/api/";
-export const BACKEND_BASE_URL = "http://educationtech.runasp.net/api/";
+export const BACKEND_BASE_URL =
+  process.env.NODE_ENV === "production"
+    ? "/api/"
+    : "http://educationtech.runasp.net/api/";
