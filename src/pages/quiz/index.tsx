@@ -112,7 +112,7 @@ const Quiz = () => {
     );
   if (isError)
     return (
-      <div className="text-center text-2xl font-bold text-red-500 flex items-center justify-center h-[50vh]">
+      <div className="text-center text-2xl font-bold text-red-500 flex items-center justify-center h-[80vh]">
         Error loading quiz.
       </div>
     );

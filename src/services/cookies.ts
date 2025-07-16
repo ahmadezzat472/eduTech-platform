@@ -15,8 +15,8 @@ class CookieService {
     return cookies.set(nameOfCookie, valueOfCookie, options);
   }
 
-  remove(nameOfCookie: string) {
-    return cookies.remove(nameOfCookie);
+  remove(nameOfCookie: string, options?: CookieSetOptions) {
+    return cookies.remove(nameOfCookie, { path: "/", ...options });
   }
 }
 

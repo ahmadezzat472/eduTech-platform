@@ -42,7 +42,7 @@ const Header = () => {
               {token ? (
                 <Button
                   onClick={() => {
-                    CookieService.remove("token");
+                    CookieService.remove("token", { path: "/" });
                     navigate("/");
                   }}
                   asChild

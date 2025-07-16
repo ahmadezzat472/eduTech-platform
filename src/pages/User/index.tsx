@@ -23,7 +23,7 @@ const UserQuizzes = () => {
 
   if (isLoading)
     return (
-      <div className="flex items-center justify-center h-[30vh]">
+      <div className="flex items-center justify-center h-[80vh]">
         <div className="size-15 animate-spin rounded-full border-4 border-blue-600 border-t-transparent mx-auto" />
       </div>
     );
