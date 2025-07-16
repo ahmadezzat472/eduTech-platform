@@ -7,14 +7,14 @@ export default function VideoDialog({ videoUrl }: { videoUrl: string }) {
         className="block dark:hidden"
         animationStyle="top-in-bottom-out"
         videoSrc={videoUrl}
-        thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+        thumbnailSrc={videoUrl}
         thumbnailAlt="Hero Video"
       />
       <HeroVideoDialog
         className="hidden dark:block"
         animationStyle="top-in-bottom-out"
         videoSrc={videoUrl}
-        thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
+        thumbnailSrc={videoUrl}
         thumbnailAlt="Hero Video"
       />
     </div>
