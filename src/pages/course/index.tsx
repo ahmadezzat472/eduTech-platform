@@ -2,7 +2,8 @@ import { Link, useParams } from "react-router-dom";
 import { courses } from "@/data/courses";
 import { Timeline } from "@/components/ui/timeline";
 import VideoDialog from "./VideoDialog";
-import { userScores } from "@/data/userScore";
+import { useQuery } from "@tanstack/react-query";
+import { getTokenQuiz } from "@/services/quiz/getTokenQuiz";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import BackgroundBoxes from "@/components/common/BackgroundBoxes";
@@ -13,6 +14,15 @@ export default function Course() {
   const course = courses.find(
     (c) => c.name.toLowerCase().replace(/\s+/g, "-") === courseName
   );
+
+  const {
+    data: quizScores,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["userQuizScores"],
+    queryFn: getTokenQuiz,
+  });
 
   const data = course
     ? course.chapters.map((chapter) => ({
@@ -35,12 +45,12 @@ export default function Course() {
             </h2>
             <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-4">
               {chapter.quizLevels.map((level) => {
-                // Find the user's score for this quiz level
-                const userScore = userScores.find(
+                // Find the user's score for this quiz level using fetched data
+                const userScore = quizScores?.find(
                   (score) =>
-                    score.courseId === course?.id &&
-                    score.chapterId === chapter.id &&
-                    score.quizLevelId === level.id
+                    score.category ===
+                      chapter.name.toLowerCase().replace(/\s+/g, "-") &&
+                    score.level === level.type
                 );
                 return (
                   <div
@@ -57,9 +67,13 @@ export default function Course() {
                     </p>
                     <div className="flex items-center gap-2.5">
                       <span className="text-xs text-blue-600 dark:text-blue-300">
-                        <Badge variant="outline">
-                          Score: {userScore ? userScore.score : "-"}
-                        </Badge>
+                        {isLoading ? (
+                          <div className="w-4 h-4 animate-spin rounded-full border-2 border-blue-600 border-t-transparent" />
+                        ) : (
+                          <Badge variant="outline">
+                            Score: {userScore ? userScore.score : "-"}
+                          </Badge>
+                        )}
                       </span>
                       <Badge variant="secondary">{level.type}</Badge>
                     </div>
@@ -83,6 +97,13 @@ export default function Course() {
         ),
       }))
     : [];
+
+  if (error)
+    return (
+      <div className="text-center text-2xl font-bold text-red-500 flex items-center justify-center h-[200px] bg-red-200">
+        Error loading quiz scores.
+      </div>
+    );
 
   return (
     <main className="relative w-full overflow-clip">
