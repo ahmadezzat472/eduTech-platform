@@ -13,7 +13,7 @@ export const courses: Course[] = [
         id: "1",
         name: "HTML",
         description: "Structure web pages using HTML.",
-        videoUrl: "https://www.youtube.com/watch?v=pQN-pnXPaVg", // HTML Crash Course
+        videoUrl: "https://www.youtube.com/watch?v=6QAELgirvjs&list=PLDoPjvoNmBAw_t_XWUFbBX-c9MafPk9ji&index=1&pp=iAQB", // HTML Crash Course
         quizLevels: [
           {
             id: "1",
@@ -44,7 +44,7 @@ export const courses: Course[] = [
         id: "2",
         name: "CSS",
         description: "Style web pages using CSS.",
-        videoUrl: "https://www.youtube.com/watch?v=yfoY53QXEnI", // CSS Crash Course
+        videoUrl: "https://www.youtube.com/watch?v=X1ulCwyhCVM&list=PLDoPjvoNmBAzjsz06gkzlSrlev53MGIKe&index=1&pp=iAQB", // CSS Crash Course
         quizLevels: [
           {
             id: "1",
@@ -75,7 +75,7 @@ export const courses: Course[] = [
         id: "3",
         name: "JavaScript",
         description: "Add interactivity to web pages with JavaScript.",
-        videoUrl: "https://www.youtube.com/watch?v=PkZNo7MFNFg", // JavaScript Tutorial
+        videoUrl: "https://www.youtube.com/watch?v=GM6dQBmc-Xg&list=PLDoPjvoNmBAx3kiplQR_oeDqLDBUDYwVv&index=1&pp=iAQB", // JavaScript Tutorial
         quizLevels: [
           {
             id: "1",
@@ -116,7 +116,7 @@ export const courses: Course[] = [
         id: "1",
         name: "Process Scheduling",
         description: "Learn how operating systems schedule processes.",
-        videoUrl: "https://www.youtube.com/watch?v=Q1Zb8n0ozlE", // Process Scheduling
+        videoUrl: "https://youtu.be/O2tV9q6784k?si=4TmZftttvl6NzBYM", // Process Scheduling
         quizLevels: [
           {
             id: "1",
@@ -146,7 +146,7 @@ export const courses: Course[] = [
         id: "2",
         name: "Process Synchronization",
         description: "Understand synchronization between processes.",
-        videoUrl: "https://www.youtube.com/watch?v=0AqfNAwXq5I", // Process Synchronization
+        videoUrl: "https://youtu.be/ph2awKa8r5Y?si=i8gVXAX7xpXhyhS9", // Process Synchronization
         quizLevels: [
           {
             id: "1",
@@ -176,7 +176,7 @@ export const courses: Course[] = [
         id: "3",
         name: "Deadlock",
         description: "Learn about deadlocks in operating systems.",
-        videoUrl: "https://www.youtube.com/watch?v=0AqfNAwXq5I", // Deadlock
+        videoUrl: "https://youtu.be/7bnpFpYZtVk?si=qEdgSZ0L1Hf0sXAS", // Deadlock
         quizLevels: [
           {
             id: "1",
@@ -316,7 +316,7 @@ export const courses: Course[] = [
         id: "1",
         name: "Relational Databases",
         description: "Understand the basics of relational databases.",
-        videoUrl: "https://www.youtube.com/watch?v=HXV3zeQKqGY", // Relational DB
+        videoUrl: "https://youtu.be/Q45sr5p_NmQ?si=5Q7srdBIUawMIEXw", // Relational DB
         quizLevels: [
           {
             id: "1",
@@ -346,7 +346,7 @@ export const courses: Course[] = [
         id: "2",
         name: "NoSQL Databases",
         description: "Explore non-relational databases.",
-        videoUrl: "https://www.youtube.com/watch?v=qI_g07C_Q5I", // NoSQL
+        videoUrl: "https://youtu.be/0buKQHokLK8?si=WL7WZMtyeQnnEdDo", // NoSQL
         quizLevels: [
           {
             id: "1",
@@ -376,7 +376,7 @@ export const courses: Course[] = [
         id: "3",
         name: "Data Modeling",
         description: "Learn how to model data for databases.",
-        videoUrl: "https://www.youtube.com/watch?v=QpdhBUYk7Kk", // Data Modeling
+        videoUrl: "https://youtu.be/VTeYbbI7co8?si=lu8T4DZ_g3HQ-2TC", // Data Modeling
         quizLevels: [
           {
             id: "1",
@@ -416,7 +416,7 @@ export const courses: Course[] = [
         id: "1",
         name: "Network Basics",
         description: "Introduction to networking.",
-        videoUrl: "https://www.youtube.com/watch?v=3QhU9jd03a0", // Network Basics
+        videoUrl: "https://youtu.be/9rABOh8oT24?si=wOdEHw-l10QA9qFi", // Network Basics
         quizLevels: [
           {
             id: "1",
@@ -446,7 +446,7 @@ export const courses: Course[] = [
         id: "2",
         name: "Protocols",
         description: "Learn about networking protocols.",
-        videoUrl: "https://www.youtube.com/watch?v=IPvYjXCsTg8", // Protocols
+        videoUrl: "https://www.youtube.com/watch?v=1zVZ9cWFnCc&pp=ygUTcHJvdG9jb2xzIGV4cGxhaW5lZA%3D%3D", // Protocols
         quizLevels: [
           {
             id: "1",
@@ -476,7 +476,7 @@ export const courses: Course[] = [
         id: "3",
         name: "Network Security",
         description: "Introduction to network security concepts.",
-        videoUrl: "https://www.youtube.com/watch?v=VVxY1DYoC6k", // Network Security
+        videoUrl: "https://youtu.be/NQ1cvwEvh44?si=q_Xd8lCWOx15gjVX", // Network Security
         quizLevels: [
           {
             id: "1",
