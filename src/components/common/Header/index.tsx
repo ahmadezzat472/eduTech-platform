@@ -32,7 +32,7 @@ const Header = () => {
         <div className="custom-container">
           <div className="flex items-center justify-between gap-3">
             <Logo />
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-4">
               <div className="hidden md:block">
                 <NavLinks
                   classNameList="flex items-center gap-5 justify-center max-lg:text-[15px] text-primary"
@@ -62,19 +62,6 @@ const Header = () => {
                   </Button>
                 </Link>
               )}
-
-              {/* <Button
-                variant="ghost"
-                className="max-md:hidden"
-                onClick={toggleBottomNav}
-                aria-label="Toggle bottom navigation"
-              >
-                <FaChevronDown
-                  className={`text-secondary transition-transform duration-300 ${
-                    isBottomNavVisible ? "rotate-180" : ""
-                  }`}
-                />
-              </Button> */}
               <MenuSheet />
             </div>
           </div>
