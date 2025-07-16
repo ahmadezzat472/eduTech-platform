@@ -98,7 +98,12 @@ export default function Course() {
       }))
     : [];
 
-  if (error) return <div>Error loading quiz scores.</div>;
+  if (error)
+    return (
+      <div className="text-center text-2xl font-bold text-red-500 flex items-center justify-center h-[200px] bg-red-200">
+        Error loading quiz scores.
+      </div>
+    );
 
   return (
     <main className="relative w-full overflow-clip">

@@ -104,9 +104,22 @@ const Quiz = () => {
   };
 
   // Handle loading and error states
-  if (isLoading) return <div>Loading quiz...</div>;
-  if (isError) return <div>Error loading quiz.</div>;
-  if (!quizData) return <div>No quiz data found.</div>;
+  if (isLoading)
+    return (
+      <div className="flex items-center justify-center h-[30vh]">
+        <div className="size-15 animate-spin rounded-full border-4 border-blue-600 border-t-transparent mx-auto" />
+      </div>
+    );
+  if (isError)
+    return (
+      <div className="text-center text-2xl font-bold text-red-500 flex items-center justify-center h-[50vh]">
+        Error loading quiz.
+      </div>
+    );
+  if (!quizData)
+    return (
+      <div className="text-center text-2xl font-bold">No quiz data found.</div>
+    );
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">

@@ -55,7 +55,11 @@ const router = createBrowserRouter([
       },
       {
         path: "user-quizzes",
-        element: <Loadable Component={ClientPages.UserQuizzes} />,
+        element: (
+          <ProtectedRoute>
+            <Loadable Component={ClientPages.UserQuizzes} />,
+          </ProtectedRoute>
+        ),
       },
     ],
   },
