@@ -49,6 +49,7 @@ interface Props {
 const NavList: FC<Props> = ({ classNameList, classNameItem }) => {
   const navLinks = [
     { name: "home", href: "/", exact: true, type: "route" },
+    { name: "User", href: "/user-quizzes", exact: true, type: "route" },
     { name: "about", href: "/#about", type: "hash" },
     { name: "contact", href: "/#contact", type: "hash" },
     { name: "learning area", href: "/learning-area", type: "route" },

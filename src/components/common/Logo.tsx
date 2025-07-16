@@ -1,13 +1,14 @@
 import { Link } from "react-router";
+import EduTechLogo from "@/assets/EduTech_logo.jpg";
+
 
 const Logo = () => {
   return (
     <div>
       <Link to={`/`}>
-        {/* <figure className="w-[150px] md:w-[180px]">
-          <img className="img-size" src="/resize-crop-logo.png" alt="Logo" />
-        </figure> */}
-        <h1 className="text-2xl font-bold">Logo</h1>
+        <figure className="w-[40px] md:w-[70px]">
+          <img className="img-size" src={EduTechLogo} alt="Logo" />
+        </figure>
       </Link>
     </div>
   );

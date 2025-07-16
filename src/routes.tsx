@@ -4,13 +4,16 @@ import RootLayout from "./components/layout/Root";
 import Loadable from "./components/utils/Loadable";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 
+// Client Pages
 const ClientPages = {
   Home: lazy(() => import("@/pages/home")),
   LearningArea: lazy(() => import("@/pages/learning-area")),
+  UserQuizzes: lazy(() => import("@/pages/User/index")),
   LearningAreaDetail: lazy(() => import("@/pages/course")),
   Quiz: lazy(() => import("@/pages/quiz")),
 };
-// ** Auth Pages
+
+// Auth Pages
 const AuthPages = {
   Login: lazy(() => import("@/pages/auth/login")),
   Register: lazy(() => import("@/pages/auth/register")),
@@ -50,29 +53,31 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
+      {
+        path: "user-quizzes",
+        element: <Loadable Component={ClientPages.UserQuizzes} />,
+      },
     ],
   },
 
-  // ** Auth
+  // Auth Routes
   {
     path: "/login",
     errorElement: <Loadable Component={AuthPages.RoutingError} />,
     element: <Loadable Component={AuthPages.Login} />,
   },
-
   {
     path: "/register",
     errorElement: <Loadable Component={AuthPages.RoutingError} />,
     element: <Loadable Component={AuthPages.Register} />,
   },
-  // ** Unauthorized
   {
     path: "/unauthorized",
     errorElement: <Loadable Component={AuthPages.RoutingError} />,
     element: <Loadable Component={AuthPages.Unauthorized} />,
   },
 
-  // ** Not Found
+  // Not Found
   {
     path: "*",
     element: <Loadable Component={AuthPages.NotFound} />,
