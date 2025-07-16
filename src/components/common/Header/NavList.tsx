@@ -36,9 +36,8 @@
 
 // export default NavList;
 
-
-import { HashLink } from 'react-router-hash-link';
-import { NavLink as RouterNavLink } from 'react-router'; // Important to rename it
+import { HashLink } from "react-router-hash-link";
+import { NavLink as RouterNavLink } from "react-router"; // Important to rename it
 import type { FC } from "react";
 
 interface Props {
@@ -49,10 +48,10 @@ interface Props {
 const NavList: FC<Props> = ({ classNameList, classNameItem }) => {
   const navLinks = [
     { name: "home", href: "/", exact: true, type: "route" },
-    { name: "User", href: "/user-quizzes", exact: true, type: "route" },
     { name: "about", href: "/#about", type: "hash" },
     { name: "contact", href: "/#contact", type: "hash" },
     { name: "learning area", href: "/learning-area", type: "route" },
+    { name: "User Quizzes", href: "/user-quizzes", exact: true, type: "route" },
   ];
 
   return (
@@ -87,4 +86,3 @@ const NavList: FC<Props> = ({ classNameList, classNameItem }) => {
 };
 
 export default NavList;
-
